@@ -183,3 +183,6 @@ override.tf.json
 
 ### CUSTOM ###
 notebooks/.*
+**/BX-Book-Ratings.csv
+**/BX-Books.csv
+**/BX-Users.csv

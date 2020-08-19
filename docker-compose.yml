@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  notebooks:
+    container_name: book-recommender-notebooks
+    build:
+      context: ./notebooks
+    volumes:
+      - ./notebooks:/home/jovyan
+    ports:
+      - 8888:8888
+
+  backend:
+    container_name: book-recommender-backend
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile
+    volumes:
+      - ./notebooks/data:/data
+      - ./backend:/work
+    ports:
+      - 8501:8501
